@@ -29,6 +29,7 @@ function playGame(e){
     if (temp === 'Start'){
         btnToggle();
         startGame();
+        
     }
 };
 function btnToggle(){
@@ -41,8 +42,13 @@ function startGame(){
     buildDeck();
     setupPlayers(numberPlayers);
     dealCards(0);
+    makeCards();
     console.log(deck);
     document.querySelector('input').value = '1';
+
+};
+
+function makeCards(){
 
 };
 

@@ -58,7 +58,7 @@ function dealCards(playerCard){
         console.log(deals);
 
     } else {
-        message.textContent = 'cards have all been dealt';
+        message.textContent = 'Cards have all been dealt!';
         return;
     }
 

@@ -1,10 +1,12 @@
 /*-------------------------------- Constants --------------------------------*/
-const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A']
-const suits = ['hearts','spades','diamonds','clubs']
+const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
+const suits = ['hearts','spades','diamonds','clubs'];
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-let deck = []
+let deck = [];
+let players = [];
+let deals = [];
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -37,6 +39,7 @@ function btnToggle(){
 function startGame(){
     let numberPlayers = document.querySelector('input').value;
     buildDeck();
+    setupPlayers(numberPlayers);
     console.log(deck);
     document.querySelector('input').value = '1';
 
@@ -52,4 +55,15 @@ function buildDeck(){
             deck.push(card);
         }
     }
+}
+
+function setupPlayers(num){
+    players = [];
+    deals = [];
+    for(let x=0; x < num;x++){
+        let div = document.createElement('div');
+        console.log('div')
+    }
+
+
 }

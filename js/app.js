@@ -25,7 +25,7 @@ buttons.forEach(function(item){
 
 function playGame(e){
     let temp = e.target.textContent;
-    console.log(temp);
+    // console.log(temp);
     if (temp === 'Start'){
         btnToggle();
         startGame();
@@ -43,34 +43,36 @@ function startGame(){
     setupPlayers(numberPlayers);
     dealCards(0);
     makeCards();
-    console.log(deck);
     document.querySelector('input').value = '1';
 
 };
-function showCard {
-
+function showCard(el,card) {
+    console.log(card);
+    if(card != undefined){
+        el.style.backgroundColor = 'white';
+        let html1 = card.rank + '<br>&' + card.suit + ';';
+        let html2 = card.rank + '<br>&' + card.suit + ';';
+    }
 };
 function makeCards(){
     let tempHolder =[];
     for(let x=0;x<players.length;x++){
         let card = deals[x].shift();
-        console.log(card);
-        console.log(deals[x]);
         tempHolder.push(card);
-        showCard(players[x].card);
+        showCard(players[x],card);
     }
 };
 
 function dealCards(playerCard){
     playerCard = (playerCard >= players.length) ? 0 : playerCard;
-    console.log(playerCard);
+    // console.log(playerCard);
     if(deck.length>0){
         let randIndex = Math.floor(Math.random()*deck.length);
         let card = deck.splice(randIndex, 1)[0];
         deals[playerCard].push(card);
         playerCard++;
         return dealCards(playerCard);
-        console.log(deals);
+        // console.log(deals);
 
     } else {
         message.textContent = 'Cards have all been dealt!';
@@ -106,7 +108,7 @@ function setupPlayers(num){
         div.appendChild(players[x]);
         gamePlay.appendChild(div);
         deals.push([]);
-        console.log(deals);
-        console.log(div);
+        // console.log(deals);
+        // console.log(div);
     }
 };

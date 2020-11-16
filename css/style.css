@@ -1,6 +1,22 @@
 .hide {
     display:none;
 }
+button {
+    text-align: center;
+}
+input {
+    text-align: center;
+    width: 50px;
+}
+.message {
+    font-size: 30px;
+}
+body {
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: cornflowerblue;
+}
 .player {
     display: inline-block;
     justify-items: center;
@@ -10,5 +26,5 @@
     vertical-align: center;
     text-align: center;
     font-size: 2rem;
-    border: 1px solid blue;
+    border: 1px solid red;
 }

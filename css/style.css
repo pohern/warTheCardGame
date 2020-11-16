@@ -3,8 +3,10 @@
 }
 .player {
     display: inline-block;
+    justify-items: center;
+    justify-content: center;
     width: 200px;
-    height: 600px;
+    height: 400px;
     vertical-align: center;
     text-align: center;
     font-size: 2rem;

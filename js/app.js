@@ -47,9 +47,18 @@ function startGame(){
     document.querySelector('input').value = '1';
 
 };
+function showCard {
 
+};
 function makeCards(){
-
+    let tempHolder =[];
+    for(let x=0;x<players.length;x++){
+        let card = deals[x].shift();
+        console.log(card);
+        console.log(deals[x]);
+        tempHolder.push(card);
+        showCard(players[x].card);
+    }
 };
 
 function dealCards(playerCard){

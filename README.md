@@ -15,10 +15,13 @@
 4. Define the required variables used to track the state of the game
 5. Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable, and performant.
 6. Upon loading, the app should:
-  * Initialize the state variables
-  * Render those values to the page
+  * Initialize the start of game
   * Wait for the user to click the play button
-5. Handle the conditons for determining a round winner
-6. Handle a condition if the cards match
-7. If one player has all the cards, they win
-8. Handle a player clicking the replay button
+  * Take in the input on the number of players
+  * Create the card deck
+  * Shuffle the card deck
+  * Equally distribute the cards based on the number of players
+7. Handle the conditons for determining a round winner
+8. Handle a condition if the cards match
+9. If one player has all the cards, they win
+10. Handle a player clicking the replay button

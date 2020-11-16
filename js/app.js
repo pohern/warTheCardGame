@@ -28,8 +28,7 @@ function playGame(e){
     // console.log(temp);
     if (temp === 'Start'){
         btnToggle();
-        startGame();
-        
+        startGame(); 
     }
 };
 
@@ -45,7 +44,6 @@ function startGame(){
     dealCards(0);
     makeCards();
     document.querySelector('input').value = '1';
-
 };
 
 function showCard(el,card) {
@@ -89,12 +87,10 @@ function dealCards(playerCard){
         playerCard++;
         return dealCards(playerCard);
         // console.log(deals);
-
     } else {
         message.textContent = 'Cards have all been dealt!';
         return;
     }
-
 };
 
 function buildDeck(){

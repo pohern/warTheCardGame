@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
-const suits = ['hearts','spades','diamonds','clubs'];
+const suits = ['hearts','spades','diams','clubs'];
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -51,7 +51,20 @@ function showCard(el,card) {
     if(card != undefined){
         el.style.backgroundColor = 'white';
         let html1 = card.rank + '<br>&' + card.suit + ';';
-        let html2 = card.rank + '<br>&' + card.suit + ';';
+        let html2 = card.rank + '&' + card.suit + ';';
+        let div = document.createElement('div');
+        div.classList.add('card');
+
+        let span1 = document.createElement('span');
+        span1.innerHTML = html2;
+        div.appendChild(span1);
+
+        let span2 = document.createElement('span');
+        span2.innerHTML = html1;
+        div.appendChild(span2);
+        el.appendChild(div)
+
+        console.log(div);
     }
 };
 function makeCards(){

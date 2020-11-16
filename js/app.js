@@ -62,8 +62,17 @@ function setupPlayers(num){
     deals = [];
     for(let x=0; x < num;x++){
         let div = document.createElement('div');
-        console.log('div')
+        div.setAttribute('id','player'+(x+1));
+        div.classList.add('player');
+        let div1 = document.createElement('div');
+        div1.textContent =  'Player '  + (x+1);
+        players[x] = document.createElement('div');
+        players[x].textContent = 'Cards';
+        div.appendChild(div1);
+        div.appendChild(players[x]);
+        gamePlay.appendChild(div);
+        deals.push([]);
+        console.log(deals);
+        console.log(div);
     }
-
-
-}
+};

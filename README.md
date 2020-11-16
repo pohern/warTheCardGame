@@ -10,9 +10,11 @@
 ![wireframe](css/warTheGame%20-%20Frame@2x.png)
 ### Pseudocode 
 1. Define the required constants
-2. Define the required variables used to track the state of the game
-3. Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable, and performant.
-4. Upon loading, the app should:
+2. Define the cached element references
+3. Define the event listeners 
+4. Define the required variables used to track the state of the game
+5. Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable, and performant.
+6. Upon loading, the app should:
   * Initialize the state variables
   * Render those values to the page
   * Wait for the user to click the play button

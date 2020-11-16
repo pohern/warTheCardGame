@@ -3,10 +3,16 @@
 }
 button {
     text-align: center;
+    padding: 12px;
 }
 input {
     text-align: center;
+    justify-content: center;
+    justify-items: center;
     width: 50px;
+    background-color: gold;
+    color: black;
+    font-size: 2rem;
 }
 .message {
     font-size: 30px;

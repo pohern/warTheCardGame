@@ -1,6 +1,14 @@
 .hide {
     display:none;
 }
+.userPlay {
+    display: flex;
+    justify-content: center;
+}
+#btn {
+    display: flex;
+    align-items: center;
+}
 button {
     text-align: center;
     padding: 12px;

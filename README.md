@@ -13,9 +13,9 @@
 2. Define the required variables used to track the state of the game
 3. Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable, and performant.
 4. Upon loading, the app should:
-  1. Initialize the state variables
-  2. Render those values to the page
-  3. Wait for the user to click the play button
+  * Initialize the state variables
+  * Render those values to the page
+  * Wait for the user to click the play button
 5. Handle the conditons for determining a round winner
 6. Handle a condition if the cards match
 7. If one player has all the cards, they win

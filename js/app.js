@@ -24,6 +24,7 @@ function playGame(e){
     let temp = e.target.textContent;
     console.log(temp);
     if (temp === 'Start'){
+        btnToggle();
         startGame();
     }
 };

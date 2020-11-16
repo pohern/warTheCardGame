@@ -1,9 +1,10 @@
 /*-------------------------------- Constants --------------------------------*/
-
+const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A']
+const suits = ['hearts','spades','diamonds','clubs']
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-
+let deck = []
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -35,6 +36,20 @@ function btnToggle(){
 
 function startGame(){
     let numberPlayers = document.querySelector('input').value;
+    buildDeck();
+    console.log(deck);
     document.querySelector('input').value = '1';
 
 };
+function buildDeck(){
+    deck = [];
+    for(let i=0; i<suits.length; i++){
+        for(let j=0;j<ranks.length;j++){
+            let card = {};
+            card.suit = suits[i];
+            card.rank = ranks[j];
+            card.value = (j + 1);
+            deck.push(card);
+        }
+    }
+}

@@ -1,11 +1,13 @@
 # War The Card Game
 ## Game Logic 
-#### A deck of cards is shuffled, and then split between the 2 players
+#### The user can pick how many players are in each game
+#### A deck of cards is shuffled, and then split between the number of players selected
 #### the players each flip over a card, the player with the highest number wins that round
 #### in the event of a tie, then it is war, each player places 3 cards facedown, an flips the fourth card to be compared. The player with the highest card then wins the war. 
 #### the same mechanisms go on until one player has all the cards, the player with all of the cards is the winner 
 ![wireframe](css/warTheGame@2x.png)
 ![wireframe](css/warTheGame@2x%20(1).png)
+![wireframe](css/warTheGame%20-%20Frame@2x.png)
 ### Pseudocode 
 1. Define the required constants
 2. Define the required variables used to track the state of the game

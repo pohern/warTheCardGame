@@ -32,6 +32,7 @@ function playGame(e){
         
     }
 };
+
 function btnToggle(){
     buttons[0].classList.toggle('hide');
     buttons[1].classList.toggle('hide');
@@ -46,6 +47,7 @@ function startGame(){
     document.querySelector('input').value = '1';
 
 };
+
 function showCard(el,card) {
     console.log(card);
     if(card != undefined){
@@ -67,6 +69,7 @@ function showCard(el,card) {
         console.log(div);
     }
 };
+
 function makeCards(){
     let tempHolder =[];
     for(let x=0;x<players.length;x++){
@@ -93,6 +96,7 @@ function dealCards(playerCard){
     }
 
 };
+
 function buildDeck(){
     deck = [];
     for(let i=0; i<suits.length; i++){
@@ -104,7 +108,7 @@ function buildDeck(){
             deck.push(card);
         }
     }
-}
+};
 
 function setupPlayers(num){
     players = [];

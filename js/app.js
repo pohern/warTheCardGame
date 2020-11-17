@@ -54,6 +54,18 @@ function showCard(element,card) {
         let html2 = card.rank + '&' + card.suit + ';';
         let div = document.createElement('div');
         div.classList.add('card');
+        if (card.suit ==='diams'){
+            div.classList.add('diamonds')
+        }
+        if (card.suit ==='hearts'){
+            div.classList.add('hearts')
+        }
+        if (card.suit ==='clubs'){
+            div.classList.add('clubs')
+        }
+        if (card.suit ==='spades'){
+            div.classList.add('spades')
+        }
         if(card.suit === 'hearts' || card.suit === 'diams'){
             div.classList.add('red');
         };

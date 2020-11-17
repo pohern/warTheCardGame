@@ -56,11 +56,11 @@ function showCard(el,card) {
         div.classList.add('card');
 
         let cardTop = document.createElement('span');
-        span1.innerHTML = html2;
+        cardTop.innerHTML = html2;
         div.appendChild(cardTop);
 
         let cardBottom = document.createElement('span');
-        span2.innerHTML = html1;
+        cardBottom.innerHTML = html1;
         div.appendChild(cardBottom);
         el.appendChild(div)
 

@@ -60,10 +60,12 @@ function showCard(el,card) {
 
         let cardTop = document.createElement('span');
         cardTop.innerHTML = html2;
+        cardTop.classList.add('small')
         div.appendChild(cardTop);
 
         let cardBottom = document.createElement('span');
         cardBottom.innerHTML = html1;
+        cardBottom.classList.add('big')
         div.appendChild(cardBottom);
         el.appendChild(div)
 

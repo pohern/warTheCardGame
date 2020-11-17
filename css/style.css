@@ -4,22 +4,32 @@
 .userPlay {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+.start {
+    height: 50px;
 }
 #btn {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 50px;
 }
 
 button {
+    font-size: 1.2rem;
     text-align: center;
     padding: 12px;
     margin: 10px;
+    height: 50px;
 }
 input {
     text-align: center;
     justify-content: center;
     justify-items: center;
     width: 50px;
+    height: 50px;
     background-color: gold;
     color: black;
     font-size: 2rem;

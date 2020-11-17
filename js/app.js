@@ -49,25 +49,25 @@ function startGame(){
 function showCard(element,card) {
     console.log(card);
     if(card != undefined){
-        element.style.backgroundColor = 'white';
+        element.style.backgroundColor = 'cornflowerblue';
         let html1 = card.rank + '<br>&' + card.suit + ';';
         let html2 = card.rank + '&' + card.suit + ';';
         let div = document.createElement('div');
         div.classList.add('card');
         if(card.suit === 'hearts' || card.suit === 'diams'){
             div.classList.add('red');
-        }
+        };
 
         let cardTop = document.createElement('span');
         cardTop.innerHTML = html2;
-        cardTop.classList.add('small')
+        cardTop.classList.add('small');
         div.appendChild(cardTop);
 
         let cardBottom = document.createElement('span');
         cardBottom.innerHTML = html1;
-        cardBottom.classList.add('big')
+        cardBottom.classList.add('big');
         div.appendChild(cardBottom);
-        element.appendChild(div)
+        element.appendChild(div);
 
         console.log(div);
     }

@@ -87,6 +87,7 @@ function showCard(element,card) {
 
 function makeCards(){
     let tempHolder =[];
+    let currentWinner = [];
     for(let x=0;x<players.length;x++){
         let card = deals[x].shift();
         tempHolder.push(card);

@@ -55,13 +55,13 @@ function showCard(el,card) {
         let div = document.createElement('div');
         div.classList.add('card');
 
-        let span1 = document.createElement('span');
+        let cardTop = document.createElement('span');
         span1.innerHTML = html2;
-        div.appendChild(span1);
+        div.appendChild(cardTop);
 
-        let span2 = document.createElement('span');
+        let cardBottom = document.createElement('span');
         span2.innerHTML = html1;
-        div.appendChild(span2);
+        div.appendChild(cardBottom);
         el.appendChild(div)
 
         console.log(div);

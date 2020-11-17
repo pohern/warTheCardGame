@@ -46,10 +46,10 @@ function startGame(){
     document.querySelector('input').value = '1';
 };
 
-function showCard(el,card) {
+function showCard(element,card) {
     console.log(card);
     if(card != undefined){
-        el.style.backgroundColor = 'white';
+        element.style.backgroundColor = 'white';
         let html1 = card.rank + '<br>&' + card.suit + ';';
         let html2 = card.rank + '&' + card.suit + ';';
         let div = document.createElement('div');
@@ -67,7 +67,7 @@ function showCard(el,card) {
         cardBottom.innerHTML = html1;
         cardBottom.classList.add('big')
         div.appendChild(cardBottom);
-        el.appendChild(div)
+        element.appendChild(div)
 
         console.log(div);
     }

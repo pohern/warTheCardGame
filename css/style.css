@@ -87,3 +87,6 @@ h1 {
     /* Not a card, but a card-shaped outline to represent a
        droppable place, like an empty pile. */
 }
+.red {
+    color: red;
+}

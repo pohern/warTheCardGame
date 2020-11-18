@@ -128,7 +128,7 @@ function updater(winner, tempHolder){
    // !!!Randomizes Cards before being put into winners hand
     console.log(tempHolder)
     tempHolder.sort(function(){
-        return (.5 - (Math.random()));
+        return .5- Math.random();
     })
     console.log(tempHolder);
 
@@ -145,7 +145,6 @@ function updater(winner, tempHolder){
     }
     responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards
     `;
-
 };
 
 function dealCards(playerCard){
@@ -159,7 +158,7 @@ function dealCards(playerCard){
         return dealCards(playerCard);
         // console.log(deals);
     } else {
-        message.textContent = 'Cards have all been dealt!';
+        message.textContent = `Cards have all been dealt!`;
         return;
     }
 };

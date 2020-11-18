@@ -30,6 +30,9 @@ function playGame(e){
         btnToggle();
         startGame(); 
     }
+    if (temp == 'Flip'){
+        makeCards();
+    }
 };
 
 function btnToggle(){
@@ -93,6 +96,7 @@ function makeCards(){
     }
     let war = [];
     for(let x=0;x<players.length;x++){
+        players[x].innerHTML = ''
         let card = deals[x].shift();
         if(currentWinner.high == card.value){
             // console.log('tie');

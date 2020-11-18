@@ -117,6 +117,26 @@ function makeCards(){
     }
     //!!!WAR!!!
     console.log(currentWinner);
+    console.log(tempHolder);
+    updater(currentWinner.player, tempHolder);
+};
+//!!!Giving the winner the cards won that round
+function updater(winner, tempHolder){
+    players[winner].style.backgroundColor = 'green'
+   // !!!Randomizes Cards before being put into winners hand
+    console.log(tempHolder)
+    tempHolder.sort(function(){
+        return .5 - Math.random();
+    })
+    console.log(tempHolder);
+
+
+    for(let record of tempHolder){
+        deals[winner].push(record);
+    }
+    responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards
+    `;
+
 };
 
 function dealCards(playerCard){

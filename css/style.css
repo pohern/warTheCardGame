@@ -104,6 +104,9 @@ h1 {
     line-height: 15px;  
     text-align: left;
 }
-.red {
+.hearts {
+    color: red;
+}
+.diamns {
     color: red;
 }

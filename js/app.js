@@ -66,9 +66,9 @@ function showCard(element,card) {
         if (card.suit ==='spades'){
             div.classList.add('spades')
         }
-        if(card.suit === 'hearts' || card.suit === 'diams'){
-            div.classList.add('red');
-        };
+        // if(card.suit === 'hearts' || card.suit === 'diams'){
+        //     div.classList.add('red');
+        // };
 
         let cardTop = document.createElement('span');
         cardTop.innerHTML = html2;

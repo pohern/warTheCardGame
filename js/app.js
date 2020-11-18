@@ -87,12 +87,36 @@ function showCard(element,card) {
 
 function makeCards(){
     let tempHolder =[];
-    let currentWinner = [];
+    let currentWinner = {
+        'high':null,
+        'player':null
+    }
+    let war = [];
     for(let x=0;x<players.length;x++){
         let card = deals[x].shift();
+        if(currentWinner.high == card.value){
+            // console.log('tie');
+            if (war.length == 0){
+                war.push(
+                    {'player':currentWinner.player,
+                     'card':currentWinner.card
+            });
+            war.push({
+                'player':x,
+                'card':card
+            })
+            }
+        }
+        if(!currentWinner.high || currentWinner.high < card.value){
+            currentWinner.high = card.value;
+            currentWinner.player = x;
+            currentWinner.card = card;
+        }
         tempHolder.push(card);
         showCard(players[x],card);
     }
+    //!!!WAR!!!
+    console.log(currentWinner);
 };
 
 function dealCards(playerCard){

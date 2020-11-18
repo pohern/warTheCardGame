@@ -127,22 +127,28 @@ function updater(winner, tempHolder){
 
    // !!!Randomizes Cards before being put into winners hand
     console.log(tempHolder)
+
     tempHolder.sort(function(){
+        //sort an array object in place
         return .5- Math.random();
-    })
+    });
+
     console.log(tempHolder);
+    for(let record of tempHolder){
+        deals[winner].push(record);
+    }
 
 
     for(let x=0;x<players.length;x++){
         let div = document.createElement('div');
-        let output = deals[x].length < 1 ? 'Lost' : 'Left:' + (deals[x].length - 1);
+        div.classList.add('stats')
+        let output = deals[x].length < 1 ? 'Lost' : 'Cards:' + (deals[x].length - 1);
         div.innerHTML = output;
+        players[x].appendChild(div);
     }
 
 
-    for(let record of tempHolder){
-        deals[winner].push(record);
-    }
+    
     responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards
     `;
 };

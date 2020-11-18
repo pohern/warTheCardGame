@@ -47,7 +47,7 @@ function startGame(){
 };
 
 function showCard(element,card) {
-    console.log(card);
+    // console.log(card);
     if(card != undefined){
         element.style.backgroundColor = 'cornflowerblue';
         let html1 = card.rank + '<br>&' + card.suit + ';';
@@ -81,7 +81,7 @@ function showCard(element,card) {
         div.appendChild(cardBottom);
         element.appendChild(div);
 
-        console.log(div);
+        // console.log(div);
     }
 };
 
@@ -116,19 +116,28 @@ function makeCards(){
         showCard(players[x],card);
     }
     //!!!WAR!!!
-    console.log(currentWinner);
-    console.log(tempHolder);
+    // console.log(currentWinner);
+    // console.log(tempHolder);
     updater(currentWinner.player, tempHolder);
 };
 //!!!Giving the winner the cards won that round
 function updater(winner, tempHolder){
     players[winner].style.backgroundColor = 'green'
+
+
    // !!!Randomizes Cards before being put into winners hand
     console.log(tempHolder)
     tempHolder.sort(function(){
-        return .5 - Math.random();
+        return (.5 - (Math.random()));
     })
     console.log(tempHolder);
+
+
+    for(let x=0;x<players.length;x++){
+        let div = document.createElement('div');
+        let output = deals[x].length < 1 ? 'Lost' : 'Left:' + (deals[x].length - 1);
+        div.innerHTML = output;
+    }
 
 
     for(let record of tempHolder){

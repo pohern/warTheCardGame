@@ -7,6 +7,8 @@ const suits = ['hearts','spades','diams','clubs'];
 let deck = [];
 let players = [];
 let deals = [];
+let round = 0;
+let inplay = false;
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -31,7 +33,17 @@ function playGame(e){
         startGame(); 
     }
     if (temp == 'Flip'){
+        let tempRuns = document.querySelector('input').value;
+        res.innerHTML = '';
+        round = 0;
+        for (let x=0;x<tempRuns;x++){
+            if(inplay){
+                message.innerHTML = 'Round' + (x+1);
+                makeCards();
+            }
+        }
         makeCards();
+
     }
 };
 
@@ -41,6 +53,7 @@ function btnToggle(){
 };
 
 function startGame(){
+    inplay = true;
     let numberPlayers = document.querySelector('input').value;
     buildDeck();
     setupPlayers(numberPlayers);

@@ -34,7 +34,7 @@ function playGame(e){
     }
     if (temp == 'Flip'){
         let tempRuns = document.querySelector('input').value;
-        res.innerHTML = '';
+        responseEl.innerHTML = '';
         round = 0;
         for (let x=0;x<tempRuns;x++){
             if(inplay){
@@ -107,16 +107,16 @@ function dealRound(playerList, tempHolder){
     }
     let war = [];
     // console.log(playerList)
-    for(let x=0;x<players.length;x++){
-    let tempPlayerIdx = playerList[x];
-    if(deals[tempPlayerIdx].length > 0){
-        let card = deals[tempPlayerIdx].shift();
+    for(let x = 0; x < playerList.length; x++){
+    let tempPlayerIndex = playerList[x];
+    if(deals[tempPlayerIndex].length > 0){
+        let card = deals[tempPlayerIndex].shift();
         if(currentWinner.high == card.value){
         // console.log('tie');
             if (war.length == 0){
                 war.push(currentWinner.player);
             }
-            war.push(tempPlayerIdx);
+            war.push(tempPlayerIndex);
         }
         if(!currentWinner.high || currentWinner.high < card.value){
             currentWinner.high = card.value;
@@ -124,7 +124,7 @@ function dealRound(playerList, tempHolder){
             currentWinner.card = card;
         }
         tempHolder.push(card);
-        showCard(players[tempPlayerIdx],card);
+        showCard(players[tempPlayerIndex], card);
     }}
     if (war.length > 0){
         dealRound(war.tempHolder)
@@ -132,6 +132,7 @@ function dealRound(playerList, tempHolder){
         updater(currentWinner.player, tempHolder); 
     }
 }
+
 function makeCards(){
     let tempHolder = [];
     playerList = [];
@@ -146,34 +147,23 @@ function makeCards(){
 //!!!Giving the winner the cards won that round
 function updater(winner, tempHolder){
     players[winner].style.backgroundColor = 'green'
-
-
    // !!!Randomizes Cards before being put into winners hand
-    console.log(tempHolder)
-
     tempHolder.sort(function(){
         //sort an array object in place
-        return .5- Math.random();
-    });
-
-    console.log(tempHolder);
+        return .5 - Math.random();
+    })
     for(let record of tempHolder){
         deals[winner].push(record);
     }
 
-
-    for(let x=0;x<players.length;x++){
+    for(let x = 0;x < players.length; x++){
         let div = document.createElement('div');
         div.classList.add('stats')
         let output = deals[x].length < 1 ? 'Lost' : 'Cards:' + (deals[x].length - 1);
         div.innerHTML = output;
         players[x].appendChild(div);
     }
-
-
-    
-    responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards
-    `;
+    responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards`;
 };
 
 function dealCards(playerCard){

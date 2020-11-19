@@ -117,8 +117,8 @@ function dealRound(playerList, tempHolder){
                 war.push(currentWinner.player);
                  'card':currentWinner.card;
                 war.push(tempPlayerIndex);
+            }
         }
-    }
         if(!currentWinner.high || currentWinner.high < card.value){
             currentWinner.high = card.value;
             currentWinner.player = x;
@@ -126,13 +126,11 @@ function dealRound(playerList, tempHolder){
         }
         tempHolder.push(card);
         showCard(players[x],card);
-    })
-}
-    //!!!WAR!!!
-    // console.log(currentWinner);
-    // console.log(tempHolder);
+    }
+
     updater(currentWinner.player, tempHolder);
 
+    }
 }
 function makeCards(){
     let tempHolder = [];

@@ -226,7 +226,7 @@ function setupPlayers(num){
         div.setAttribute('id','player'+(x+1));
         div.classList.add('player');
         let div1 = document.createElement('div');
-        div1.textContent = 'Player ' + parseInt((x)+1);
+        div1.textContent = `Player ${parseInt((x)+1)}`;
         players[x] = document.createElement('div');
         players[x].textContent = 'Cards';
         div.appendChild(div1);

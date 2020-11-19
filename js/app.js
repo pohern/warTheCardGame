@@ -1,5 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
-const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
+// const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
+const ranks = [2,3];
 const suits = ['hearts','spades','diams','clubs'];
 
 
@@ -100,6 +101,7 @@ function showCard(element,card) {
         // console.log(div);
     }
 };
+
 function dealRound(playerList, tempHolder){
     let currentWinner = {
         'high':null,
@@ -135,14 +137,14 @@ function dealRound(playerList, tempHolder){
 
 function makeCards(){
     let tempHolder = [];
-    playerList = [];
-    for(let x=0;x<players.length;x++){
-        players[x].innerHTML = '';
+    let playerList = [];
+    for(let x = 0; x < players.length; x++){
         if (deals[x].length > 0){
+            players[x].innerHTML = '';
             playerList.push(x);
         }
     }
-    dealRound(playerList,tempHolder)
+    dealRound(playerList,tempHolder);
 };
 //!!!Giving the winner the cards won that round
 function updater(winner, tempHolder){

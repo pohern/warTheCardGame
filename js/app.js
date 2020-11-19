@@ -115,8 +115,8 @@ function dealRound(playerList, tempHolder){
         // console.log('tie');
             if (war.length == 0){
                 war.push(currentWinner.player);
-                war.push(tempPlayerIndex);
             }
+            war.push(tempPlayerIndex);
         }
         if(!currentWinner.high || currentWinner.high < card.value){
             currentWinner.high = card.value;
@@ -127,7 +127,7 @@ function dealRound(playerList, tempHolder){
         showCard(players[tempPlayerIndex],card);
     }}
     if (war.length > 0){
-        dealRound(war.)
+        dealRound(war.tempHolder)
     } else {
         updater(currentWinner.player, tempHolder); 
     }
@@ -136,11 +136,9 @@ function makeCards(){
     let tempHolder = [];
     playerList = [];
     for(let x=0;x<players.length;x++){
+        players[x].innerHTML = '';
         if (deals[x].length > 0){
-            players[x].innerHTML = '';
             playerList.push(x);
-
-
         }
     }
     

@@ -10,7 +10,7 @@ let players = [];
 let deals = [];
 let round = 0;
 let inplay = false;
-
+let total = 0;
 
 /*------------------------ Cached Element References ------------------------*/
 const message = document.querySelector('.message')
@@ -161,8 +161,11 @@ function updater(winner, tempHolder){
     for(let x = 0;x < players.length; x++){
         let div = document.createElement('div');
         div.classList.add('stats')
-        let output = deals[x].length < 1 ? 'Lost' : 'Cards:' + (deals[x].length - 1);
-        div.innerHTML = output;
+        if( deals[x].length == total){
+            div.innerHTML = `WINNER ${deals[x].length} cards`;
+        } else {
+            div.innerHTML = deals[x].length < 1 ? 'Lost' : `Cards: (deals[x].length)`;
+        }
         players[x].appendChild(div);
     }
     responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards`;
@@ -189,6 +192,7 @@ function buildDeck(){
     for(let i=0; i<suits.length; i++){
         for(let j=0;j<ranks.length;j++){
             let card = {};
+            total++;
             card.suit = suits[i];
             card.rank = ranks[j];
             card.value = (j + 1);

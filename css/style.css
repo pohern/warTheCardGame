@@ -48,7 +48,7 @@ body {
     justify-items: center;
     justify-content: center;
     width: 200px;
-    height: 400px;
+    min-height: 400px;
     vertical-align: center;
     text-align: center;
     font-size: 2rem;
@@ -113,4 +113,7 @@ h1 {
 .stats {
     font-size: 1rem;
     margin-top: 25px;
+}
+.gameplay {
+    background-color: white;
 }

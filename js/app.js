@@ -9,8 +9,9 @@ let deck = [];
 let players = [];
 let deals = [];
 let round = 0;
-let inplay = false;
+let inPlay = false;
 let total = 0;
+
 
 /*------------------------ Cached Element References ------------------------*/
 const message = document.querySelector('.message')
@@ -18,6 +19,7 @@ const buttons = document.querySelectorAll('button')
 const gamePlay = document.querySelector('.gamePlay')
 const userPlay = document.querySelector('.userPlay')
 const responseEl = document.querySelector('.response')
+message.style.color = 'red';
 /*----------------------------- Event Listeners -----------------------------*/
 buttons.forEach(function(item){
     item.addEventListener('click',playGame);
@@ -30,6 +32,7 @@ function playGame(e){
     let temp = e.target.textContent;
     // console.log(temp);
     if (temp === 'Start'){
+        message.style.color = 'black';
         btnToggle();
         startGame(); 
     }
@@ -38,7 +41,7 @@ function playGame(e){
         responseEl.innerHTML = '';
         round = 0;
         for (let x = 0; x < tempRuns; x++){
-            if(inplay){
+            if(inPlay){
                 message.innerHTML = `Round  ${(x+1)}`;
                 makeCards();
             }
@@ -53,7 +56,7 @@ function btnToggle(){
 };
 
 function startGame(){
-    inplay = true;
+    gamePlay.innerHTML = '';
     let numberPlayers = document.querySelector('input').value;
     buildDeck();
     setupPlayers(numberPlayers);
@@ -104,7 +107,7 @@ function showCard(element,card) {
 function dealRound(playerList, tempHolder){
     let currentWinner = {
         'high':null,
-        'player':null
+        'player':player[0]
     }
     let war = [];
     // console.log(playerList)
@@ -143,13 +146,18 @@ function makeCards(){
             playerList.push(x);
         }
     }
+    if(playerList.length == 1){
+        winGame();
+    }
     dealRound(playerList,tempHolder);
 };
 
 function winGame(){
+    message.style.color = 'red';
     btnToggle();
+    inPlay = false;
     for(let x = 0; x < players.length; x++){
-        players[x].innerHTML += (deals[x].length >= total) ? "WINNER" : 'LOSER';
+        players[x].innerHTML += (deals[x].length >= total) ? "<br>WINNER" : '<br>LOSER';
     }
     message.innerHTML = 'Select number of players';
     document.querySelector('input') = '2';

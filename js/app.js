@@ -106,8 +106,8 @@ function showCard(element,card) {
 
 function dealRound(playerList, tempHolder){
     let currentWinner = {
-        'high':null,
-        'player':player[0]
+        'high': null,
+        'player': playerList[0]
     }
     let war = [];
     // console.log(playerList)
@@ -146,7 +146,7 @@ function makeCards(){
             playerList.push(x);
         }
     }
-    if(playerList.length == 1){
+    if (playerList.length == 1){
         winGame();
     }
     dealRound(playerList,tempHolder);
@@ -160,7 +160,7 @@ function winGame(){
         players[x].innerHTML += (deals[x].length >= total) ? "<br>WINNER" : '<br>LOSER';
     }
     message.innerHTML = 'Select number of players';
-    document.querySelector('input') = '2';
+    document.querySelector('input').value = '2';
 
 };
 //!!!Giving the winner the cards won that round
@@ -207,7 +207,7 @@ function dealCards(playerCard){
 function buildDeck(){
     deck = [];
     for(let i = 0; i < suits.length; i++){
-        for(let j = 0; j < ranks.length; j++){
+        for (let j = 0; j < ranks.length; j++){
             let card = {};
             total++;
             card.suit = suits[i];
@@ -226,7 +226,7 @@ function setupPlayers(num){
         div.setAttribute('id','player'+(x+1));
         div.classList.add('player');
         let div1 = document.createElement('div');
-        div1.textContent = 'Player ' + (x+1);
+        div1.textContent = 'Player ' + parseInt((x)+1);
         players[x] = document.createElement('div');
         players[x].textContent = 'Cards';
         div.appendChild(div1);

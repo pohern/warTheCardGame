@@ -146,6 +146,11 @@ function makeCards(){
     }
     dealRound(playerList,tempHolder);
 };
+
+function winGame(){
+    
+
+};
 //!!!Giving the winner the cards won that round
 function updater(winner, tempHolder){
     players[winner].style.backgroundColor = 'green'
@@ -157,14 +162,13 @@ function updater(winner, tempHolder){
     for(let record of tempHolder){
         deals[winner].push(record);
     }
-
     for(let x = 0;x < players.length; x++){
         let div = document.createElement('div');
         div.classList.add('stats')
         if( deals[x].length == total){
-            div.innerHTML = `WINNER ${deals[x].length} cards`;
+            div.innerHTML = `WINNER <br>${deals[x].length} cards`;
         } else {
-            div.innerHTML = deals[x].length < 1 ? 'Lost' : `Cards: (deals[x].length)`;
+            div.innerHTML = deals[x].length < 1 ? 'Lost' : `Cards: ${(deals[x].length)}`;
         }
         players[x].appendChild(div);
     }

@@ -9,6 +9,19 @@
 }
 .start {
     height: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    background-color: green;
+}
+.flip {
+    height: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+    color: white;
 }
 #btn {
     display: flex;
@@ -116,4 +129,8 @@ h1 {
 }
 .gameplay {
     background-color: white;
+}
+.message {
+    font-size: 30px;
+    padding: 10px;
 }

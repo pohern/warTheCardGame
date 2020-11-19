@@ -37,14 +37,13 @@ function playGame(e){
         let tempRuns = document.querySelector('input').value;
         responseEl.innerHTML = '';
         round = 0;
-        for (let x=0;x<tempRuns;x++){
+        for (let x = 0; x < tempRuns; x++){
             if(inplay){
-                message.innerHTML = 'Round' + (x+1);
+                message.innerHTML = `Round  ${(x+1)}`;
                 makeCards();
             }
         }
         makeCards();
-
     }
 };
 
@@ -122,7 +121,7 @@ function dealRound(playerList, tempHolder){
         }
         if(!currentWinner.high || currentWinner.high < card.value){
             currentWinner.high = card.value;
-            currentWinner.player = x;
+            currentWinner.player = tempPlayerIdx;
             currentWinner.card = card;
         }
         tempHolder.push(card);
@@ -148,7 +147,12 @@ function makeCards(){
 };
 
 function winGame(){
-    
+    btnToggle();
+    for(let x = 0; x < players.length; x++){
+        players[x].innerHTML += (deals[x].length >= total) ? "WINNER" : 'LOSER';
+    }
+    message.innerHTML = 'Select number of players';
+    document.querySelector('input') = '2';
 
 };
 //!!!Giving the winner the cards won that round
@@ -166,7 +170,8 @@ function updater(winner, tempHolder){
         let div = document.createElement('div');
         div.classList.add('stats')
         if( deals[x].length == total){
-            div.innerHTML = `WINNER <br>${deals[x].length} cards`;
+            div.innerHTML = `Total ${deals[x].length} cards`;
+            winGame();
         } else {
             div.innerHTML = deals[x].length < 1 ? 'Lost' : `Cards: ${(deals[x].length)}`;
         }
@@ -178,8 +183,8 @@ function updater(winner, tempHolder){
 function dealCards(playerCard){
     playerCard = (playerCard >= players.length) ? 0 : playerCard;
     // console.log(playerCard);
-    if(deck.length>0){
-        let randIndex = Math.floor(Math.random()*deck.length);
+    if(deck.length > 0){
+        let randIndex = Math.floor(Math.random() * deck.length);
         let card = deck.splice(randIndex, 1)[0];
         deals[playerCard].push(card);
         playerCard++;
@@ -193,8 +198,8 @@ function dealCards(playerCard){
 
 function buildDeck(){
     deck = [];
-    for(let i=0; i<suits.length; i++){
-        for(let j=0;j<ranks.length;j++){
+    for(let i = 0; i < suits.length; i++){
+        for(let j = 0; j < ranks.length; j++){
             let card = {};
             total++;
             card.suit = suits[i];
@@ -208,7 +213,7 @@ function buildDeck(){
 function setupPlayers(num){
     players = [];
     deals = [];
-    for(let x=0; x < num;x++){
+    for(let x = 0; x < num; x++){
         let div = document.createElement('div');
         div.setAttribute('id','player'+(x+1));
         div.classList.add('player');

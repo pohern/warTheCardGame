@@ -100,8 +100,7 @@ function showCard(element,card) {
         // console.log(div);
     }
 };
-
-function makeCards(){
+function dealRound(playerList, tempHolder){
     let tempHolder =[];
     let currentWinner = {
         'high':null,
@@ -109,21 +108,17 @@ function makeCards(){
     }
     let war = [];
     for(let x=0;x<players.length;x++){
-        players[x].innerHTML = ''
-        let card = deals[x].shift();
+    let tempPlayerIndex = playerList[x];
+    if(deals[tempPlayerIndex].length > 0){
+        let card = deals[tempPlayerIndex].shift();
         if(currentWinner.high == card.value){
-            // console.log('tie');
+        // console.log('tie');
             if (war.length == 0){
-                war.push(
-                    {'player':currentWinner.player,
-                     'card':currentWinner.card
-            });
-            war.push({
-                'player':x,
-                'card':card
-            })
-            }
+                war.push(currentWinner.player);
+                 'card':currentWinner.card;
+                war.push(tempPlayerIndex);
         }
+    }
         if(!currentWinner.high || currentWinner.high < card.value){
             currentWinner.high = card.value;
             currentWinner.player = x;
@@ -131,11 +126,26 @@ function makeCards(){
         }
         tempHolder.push(card);
         showCard(players[x],card);
-    }
+    })
+}
     //!!!WAR!!!
     // console.log(currentWinner);
     // console.log(tempHolder);
     updater(currentWinner.player, tempHolder);
+
+}
+function makeCards(){
+    let tempHolder = [];
+    playerList = [];
+    for(let x=0;x<players.length;x++){
+        if (deals[x].length > 0){
+            players[x].innerHTML = '';
+            playerList.push(x);
+
+
+        }
+    }
+    
 };
 //!!!Giving the winner the cards won that round
 function updater(winner, tempHolder){

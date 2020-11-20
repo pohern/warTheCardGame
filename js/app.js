@@ -36,7 +36,7 @@ function playGame(e){
         round = 0;
         for (let x = 0; x < tempRuns; x++){
             if(inPlay){
-                message.innerHTML = `Round  ${(x+1)}`;
+                message.innerHTML = `You played ${(x+1)} turns`;
                 makeCards();
             }
         }

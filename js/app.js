@@ -106,30 +106,30 @@ function dealRound(playerList, tempHolder){
     let war = [];
     // console.log(playerList)
     for(let x = 0; x < playerList.length; x++){
-    let tempPlayerIdx = playerList[x];
-    if(deals[tempPlayerIdx].length > 0){
-        let card = deals[tempPlayerIdx].shift();
-        if(currentWinner.high == card.value){
-        // console.log('tie');
-            if (war.length == 0){
-                war.push(currentWinner.player);
+        let tempPlayerIdx = playerList[x];
+        if(deals[tempPlayerIdx].length > 0){
+            let card = deals[tempPlayerIdx].shift();
+            if(currentWinner.high == card.value){
+            // console.log('tie');
+                if (war.length == 0){
+                    war.push(currentWinner.player);
+                }
+                war.push(tempPlayerIdx);
             }
-            war.push(tempPlayerIdx);
-        }
-        if(!currentWinner.high || currentWinner.high < card.value){
-            currentWinner.high = card.value;
-            currentWinner.player = tempPlayerIdx;
-            currentWinner.card = card;
-        }
-        tempHolder.push(card);
-        showCard(players[tempPlayerIdx], card);
+            if(!currentWinner.high || currentWinner.high < card.value){
+                currentWinner.high = card.value;
+                currentWinner.player = tempPlayerIdx;
+                currentWinner.card = card;
+            }
+            tempHolder.push(card);
+            showCard(players[tempPlayerIdx], card);
     }}
-    if (war.length > 0){
-        dealRound(war, tempHolder)
+    if (war.length > 0) {
+        dealRound(war, tempHolder);
     } else {
-        updater(currentWinner.player, tempHolder); 
+        updater(currentWinner.player, tempHolder);\\ 
     }
-}
+};
 
 function makeCards(){
     let tempHolder = [];

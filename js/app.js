@@ -63,35 +63,191 @@ function showCard(element,card) {
     // console.log(card);
     if(card != undefined){
         element.style.backgroundColor = 'cornflowerblue';
-        let html1 = card.rank + '<br>&' + card.suit + ';';
-        let html2 = card.rank + '&' + card.suit + ';';
+        // let html1 = card.rank + '<br>&' + card.suit + ';';
+        // let html2 = card.rank + '&' + card.suit + ';';
         let div = document.createElement('div');
         div.classList.add('card');
         if (card.suit ==='diams'){
             div.classList.add('diamonds')
+            if (card.rank === 'A'){
+                div.classList.add('A')
+            }
+            if (card.rank === 'K'){
+                div.classList.add('K')
+            }
+            if (card.rank === 'Q'){
+                div.classList.add('Q')
+            }
+            if (card.rank === 'J'){
+                div.classList.add('J')
+            }
+            if (card.rank === 10){
+                div.classList.add('r10')
+            }
+            if (card.rank === 9){
+                div.classList.add('r09')
+            }
+            if (card.rank === 8){
+                div.classList.add('r08')
+            }
+            if (card.rank === 7){
+                div.classList.add('r07')
+            }
+            if (card.rank === 6){
+                div.classList.add('r06')
+            }
+            if (card.rank === 5){
+                div.classList.add('r05')
+            }
+            if (card.rank === 4){
+                div.classList.add('r04')
+            }
+            if (card.rank === 3){
+                div.classList.add('r03')
+            }
+            if (card.rank === 2){
+                div.classList.add('r02')
+            }
         }
         if (card.suit ==='hearts'){
             div.classList.add('hearts')
+            if (card.rank === 'A'){
+                div.classList.add('A')
+            }
+            if (card.rank === 'K'){
+                div.classList.add('K')
+            }
+            if (card.rank === 'Q'){
+                div.classList.add('Q')
+            }
+            if (card.rank === 'J'){
+                div.classList.add('J')
+            }
+            if (card.rank === 10){
+                div.classList.add('r10')
+            }
+            if (card.rank === 9){
+                div.classList.add('r09')
+            }
+            if (card.rank === 8){
+                div.classList.add('r08')
+            }
+            if (card.rank === 7){
+                div.classList.add('r07')
+            }
+            if (card.rank === 6){
+                div.classList.add('r06')
+            }
+            if (card.rank === 5){
+                div.classList.add('r05')
+            }
+            if (card.rank === 4){
+                div.classList.add('r04')
+            }
+            if (card.rank === 3){
+                div.classList.add('r03')
+            }
+            if (card.rank === 2){
+                div.classList.add('r02')
+            }
         }
         if (card.suit ==='clubs'){
             div.classList.add('clubs')
+            if (card.rank === 'A'){
+                div.classList.add('A')
+            }
+            if (card.rank === 'K'){
+                div.classList.add('K')
+            }
+            if (card.rank === 'Q'){
+                div.classList.add('Q')
+            }
+            if (card.rank === 'J'){
+                div.classList.add('J')
+            }
+            if (card.rank === 10){
+                div.classList.add('r10')
+            }
+            if (card.rank === 9){
+                div.classList.add('r09')
+            }
+            if (card.rank === 8){
+                div.classList.add('r08')
+            }
+            if (card.rank === 7){
+                div.classList.add('r07')
+            }
+            if (card.rank === 6){
+                div.classList.add('r06')
+            }
+            if (card.rank === 5){
+                div.classList.add('r05')
+            }
+            if (card.rank === 4){
+                div.classList.add('r04')
+            }
+            if (card.rank === 3){
+                div.classList.add('r03')
+            }
+            if (card.rank === 2){
+                div.classList.add('r02')
+            }
         }
         if (card.suit ==='spades'){
             div.classList.add('spades')
+            if (card.rank === 'A'){
+                div.classList.add('A')
+            }
+            if (card.rank === 'K'){
+                div.classList.add('K')
+            }
+            if (card.rank === 'Q'){
+                div.classList.add('Q')
+            }
+            if (card.rank === 'J'){
+                div.classList.add('J')
+            }
+            if (card.rank === 10){
+                div.classList.add('r10')
+            }
+            if (card.rank === 9){
+                div.classList.add('r09')
+            }
+            if (card.rank === 8){
+                div.classList.add('r08')
+            }
+            if (card.rank === 7){
+                div.classList.add('r07')
+            }
+            if (card.rank === 6){
+                div.classList.add('r06')
+            }
+            if (card.rank === 5){
+                div.classList.add('r05')
+            }
+            if (card.rank === 4){
+                div.classList.add('r04')
+            }
+            if (card.rank === 3){
+                div.classList.add('r03')
+            }
+            if (card.rank === 2){
+                div.classList.add('r02')
+            }
         }
         // if(card.suit === 'hearts' || card.suit === 'diams'){
         //     div.classList.add('red');
         // };
 
-        let cardTop = document.createElement('span');
-        cardTop.innerHTML = html2;
-        cardTop.classList.add('small');
-        div.appendChild(cardTop);
+        // let cardTop = document.createElement('span');
+        // cardTop.innerHTML = html2;
+        // cardTop.classList.add('small');
+        // div.appendChild(cardTop);
 
-        let cardBottom = document.createElement('span');
-        cardBottom.innerHTML = html1;
-        cardBottom.classList.add('big');
-        div.appendChild(cardBottom);
+        // let cardBottom = document.createElement('span');
+        // cardBottom.innerHTML = html1;
+        // cardBottom.classList.add('big');
+        // div.appendChild(cardBottom);
         element.appendChild(div);
 
         // console.log(div);

@@ -318,6 +318,8 @@ function winGame(){
 //!!!Giving the winner the cards won that round
 function updater(winner, tempHolder){
     players[winner].style.backgroundColor = 'green'
+    players[winner].classList.add('animate__animated', 'animate__tada');
+    // players[winner].classList.remove('animate__animated', 'animate__bounce');
    // !!!Randomizes Cards before being put into winners hand
     tempHolder.sort(function(){
         //sort an array object in place
@@ -336,8 +338,10 @@ function updater(winner, tempHolder){
             div.innerHTML = deals[x].length < 1 ? 'Lost' : `Cards: ${(deals[x].length)}`;
         }
         players[x].appendChild(div);
+        
     }
     responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards<br>`;
+    
 };
 
 function dealCards(playerCard){

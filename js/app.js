@@ -181,7 +181,7 @@ function updater(winner, tempHolder){
         }
         players[x].appendChild(div);
     }
-    responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards`;
+    responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards<br>`;
 };
 
 function dealCards(playerCard){

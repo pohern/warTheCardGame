@@ -63,7 +63,7 @@ function showCard(element,card) {
     if(card != undefined){
         element.style.backgroundColor = 'cornflowerblue';
         let html1 = card.rank + '<br>&' + card.suit + ';';
-        let html2 = card.rank + '<br>&' + card.suit + ';';
+        let html2 = card.rank + '&' + card.suit + ';';
         let div = document.createElement('div');
         div.classList.add('card');
         if (card.suit ==='diams'){

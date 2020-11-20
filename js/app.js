@@ -156,6 +156,7 @@ function winGame(){
     document.querySelector('input').value = '2';
 
 };
+
 //!!!Giving the winner the cards won that round
 function updater(winner, tempHolder){
     players[winner].style.backgroundColor = 'green'

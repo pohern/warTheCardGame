@@ -286,7 +286,7 @@ function dealRound(playerList, tempHolder){
     } else {
         updater(currentWinner.player, tempHolder);
     }
-    players[winner].classList.remove('animate__animated', 'animate__tada');
+    // players[winner].classList.remove('animate__animated', 'animate__tada');
 };
 
 function makeCards(){
@@ -318,8 +318,9 @@ function winGame(){
 
 //Giving the winner the cards won that round
 function updater(winner, tempHolder){
+    // player[winner].classList.remove('animate__animated', 'animate__tada');
     players[winner].style.backgroundColor = 'green'
-    players[winner].classList.add('animate__animated', 'animate__tada');
+    players[winner].setAttribute('class','animate__animated animate__tada');
     
    //Randomizes Cards before being put into winners hand
     tempHolder.sort(function(){
@@ -342,7 +343,7 @@ function updater(winner, tempHolder){
         
     }
     responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards<br>`;
-    
+    // players[winner].removeAttribute('class','animate__animated animate__tada')
 };
 
 function dealCards(playerCard){

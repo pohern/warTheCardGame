@@ -286,6 +286,7 @@ function dealRound(playerList, tempHolder){
     } else {
         updater(currentWinner.player, tempHolder);
     }
+    players[winner].classList.remove('animate__animated', 'animate__tada');
 };
 
 function makeCards(){
@@ -319,7 +320,7 @@ function winGame(){
 function updater(winner, tempHolder){
     players[winner].style.backgroundColor = 'green'
     players[winner].classList.add('animate__animated', 'animate__tada');
-    // players[winner].classList.remove('animate__animated', 'animate__bounce');
+    
    // !!!Randomizes Cards before being put into winners hand
     tempHolder.sort(function(){
         //sort an array object in place

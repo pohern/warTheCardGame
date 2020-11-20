@@ -9,12 +9,13 @@ let deals = [];
 let round = 0;
 let inPlay = false;
 let total = 0;
+
 /*------------------------ Cached Element References ------------------------*/
-const message = document.querySelector('.message')
-const buttons = document.querySelectorAll('button')
-const gamePlay = document.querySelector('.gamePlay')
-const userPlay = document.querySelector('.userPlay')
-const responseEl = document.querySelector('.response')
+const message = document.querySelector('.message');
+const buttons = document.querySelectorAll('button');
+const gamePlay = document.querySelector('.gamePlay');
+const userPlay = document.querySelector('.userPlay');
+const responseEl = document.querySelector('.response');
 message.style.color = 'red';
 /*----------------------------- Event Listeners -----------------------------*/
 buttons.forEach(function(item){
@@ -39,7 +40,6 @@ function playGame(e){
                 makeCards();
             }
         }
-        makeCards();
     }
 };
 
@@ -49,6 +49,7 @@ function btnToggle(){
 };
 
 function startGame(){
+    inPlay = true;
     gamePlay.innerHTML = '';
     let numberPlayers = document.querySelector('input').value;
     buildDeck();
@@ -168,7 +169,7 @@ function updater(winner, tempHolder){
     for(let record of tempHolder){
         deals[winner].push(record);
     }
-    for(let x = 0;x < players.length; x++){
+    for(let x = 0; x < players.length; x++){
         let div = document.createElement('div');
         div.classList.add('stats')
         if( deals[x].length == total){

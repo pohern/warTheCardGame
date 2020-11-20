@@ -117,6 +117,7 @@ function dealRound(playerList, tempHolder){
                 war.push(tempPlayerIdx);
             }
             if(!currentWinner.high || currentWinner.high < card.value){
+                war = [];
                 currentWinner.high = card.value;
                 currentWinner.player = tempPlayerIdx;
                 currentWinner.card = card;
@@ -127,7 +128,7 @@ function dealRound(playerList, tempHolder){
     if (war.length > 0) {
         dealRound(war, tempHolder);
     } else {
-        updater(currentWinner.player, tempHolder);\\ 
+        updater(currentWinner.player, tempHolder);
     }
 };
 

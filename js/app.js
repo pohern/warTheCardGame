@@ -2,8 +2,6 @@
 const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
 // const ranks = [2,3];
 const suits = ['hearts','spades','diams','clubs'];
-
-
 /*---------------------------- Variables (state) ----------------------------*/
 let deck = [];
 let players = [];
@@ -11,8 +9,6 @@ let deals = [];
 let round = 0;
 let inPlay = false;
 let total = 0;
-
-
 /*------------------------ Cached Element References ------------------------*/
 const message = document.querySelector('.message')
 const buttons = document.querySelectorAll('button')
@@ -24,10 +20,7 @@ message.style.color = 'red';
 buttons.forEach(function(item){
     item.addEventListener('click',playGame);
 });
-
-
 /*-------------------------------- Functions --------------------------------*/
-
 function playGame(e){
     let temp = e.target.textContent;
     // console.log(temp);

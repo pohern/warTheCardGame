@@ -311,7 +311,7 @@ function winGame(){
     for(let x = 0; x < players.length; x++){
         players[x].innerHTML += (deals[x].length >= total) ? `<br>WINNER` : `<br>LOSER`;
     }
-    // CONFETTI //
+    confetti.start();
     message.innerHTML = 'Select number of players';
     document.querySelector('input').value = '2';
 

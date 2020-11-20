@@ -316,12 +316,12 @@ function winGame(){
 
 };
 
-//!!!Giving the winner the cards won that round
+//Giving the winner the cards won that round
 function updater(winner, tempHolder){
     players[winner].style.backgroundColor = 'green'
     players[winner].classList.add('animate__animated', 'animate__tada');
     
-   // !!!Randomizes Cards before being put into winners hand
+   //Randomizes Cards before being put into winners hand
     tempHolder.sort(function(){
         //sort an array object in place
         return .5 - Math.random();

@@ -26,4 +26,4 @@
 8. Handle a condition if the cards match
 9. If one player has all the cards, they win
 10. Handle a player clicking the replay button
-        1.  Handled though end of game to restart
+  *  Handled though end of game to restart

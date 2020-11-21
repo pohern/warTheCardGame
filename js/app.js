@@ -44,7 +44,7 @@ jokes.addEventListener('click', () => {
     })
     .then((data)=> {
         let newQuote = {}
-        newQuote['artist'] = 'T-Swift'
+        newQuote['artist'] = ''
         newQuote['quote'] = data
         quotes.push(newQuote)
         render()
@@ -57,7 +57,7 @@ jokes.addEventListener('click', () => {
 function appendDiv (quote, artist, idx){
     let newDiv = document.createElement('div')
     newDiv.innerHTML = `
-                        <div class="card h-100" id="${artist.toLowerCase()}">
+                        <div class="jokeCard h-100" id="${artist.toLowerCase()}">
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
                                     <p>${quote}</p>

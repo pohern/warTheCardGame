@@ -2,6 +2,7 @@
 const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
 // const ranks = [2,3];
 const suits = ['hearts','spades','diams','clubs'];
+const quotes = [];
 /*---------------------------- Variables (state) ----------------------------*/
 let deck = [];
 let players = [];
@@ -9,6 +10,7 @@ let deals = [];
 let round = 0;
 let inPlay = false;
 let total = 0;
+
 
 /*------------------------ Cached Element References ------------------------*/
 const message = document.querySelector('.message');
@@ -18,14 +20,64 @@ const gamePlay = document.querySelector('.gamePlay');
 const userPlay = document.querySelector('.userPlay');
 const responseEl = document.querySelector('.response');
 const totalRounds = document.getElementById('totalCount');
-const input1 = document.getElementById('adding')
+const input1 = document.getElementById('adding');
+const jokes = document.getElementById('jokes');
+const container = document.getElementById('containerDiv');
 message.style.color = 'red';
 /*----------------------------- Event Listeners -----------------------------*/
 buttons.forEach(function(item){
     item.addEventListener('click',playGame);
 });
+
 flipBtn.addEventListener('click', addition);
+
+jokes.addEventListener('click', () => {
+    fetch('https://geek-jokes.sameerkumar.website/api')
+    .then((response) => {
+        console.log(response)
+        return response.json()
+    
+    })
+    .then((data)=> {
+        let newQuote = {}
+        newQuote['artist'] = 'T-Swift'
+        newQuote['quote'] = data.quote
+        quotes.push(newQuote)
+        render()
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
 /*-------------------------------- Functions --------------------------------*/
+function appendDiv (quote, artist, idx){
+    let newDiv = document.createElement('div')
+    newDiv.innerHTML = `
+                        <div class="card h-100" id="${artist.toLowerCase()}">
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>${quote}</p>
+                                    <footer class="blockquote-footer">${artist}</footer>
+                                </blockquote>
+                            </div>
+                            <button id = 'delButton' class='btn' onClick={deleteQuote(${idx})}>X</button>
+                        </div>    
+                        `
+    container.appendChild(newDiv)
+};
+
+function deleteQuote(idx) {
+    quotes.splice(idx, 1)
+    render()
+};
+
+function render() {
+    container.innerHTML = ""
+    quotes.forEach((quote, idx) => {
+      appendDiv(quote["quote"], quote["artist"], idx)
+    })
+};
+
 function addition(){
     let input2 = totalRounds.value
     result = parseInt(input1.value) + parseInt(input2)
@@ -397,3 +449,4 @@ function setupPlayers(num){
         // console.log(div);
     }
 };
+

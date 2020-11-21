@@ -245,22 +245,7 @@ function showCard(element,card) {
                 div.classList.add('r02')
             }
         }
-        // if(card.suit === 'hearts' || card.suit === 'diams'){
-        //     div.classList.add('red');
-        // };
-
-        // let cardTop = document.createElement('span');
-        // cardTop.innerHTML = html2;
-        // cardTop.classList.add('small');
-        // div.appendChild(cardTop);
-
-        // let cardBottom = document.createElement('span');
-        // cardBottom.innerHTML = html1;
-        // cardBottom.classList.add('big');
-        // div.appendChild(cardBottom);
         element.appendChild(div);
-
-        // console.log(div);
     }
 };
 

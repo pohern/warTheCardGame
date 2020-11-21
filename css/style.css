@@ -102,21 +102,7 @@ h1 {
     /* Not a card, but a card-shaped outline to represent a
        droppable place, like an empty pile. */
 }
-.big {
-    font-size: 3rem;
-    margin-top: 35px;
-    text-align: center;
-    line-height: 35px;  
-    display: block;
-}
-.small {
-    margin-left: 10px;
-    margin-top: 10px;
-    display: block;
-    font-size:1.2rem;
-    line-height: 15px;  
-    text-align: left;
-}
+
 .hearts {
     color: red;
 }

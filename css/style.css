@@ -7,6 +7,16 @@
     align-items: center;
     margin: 25px;
 }
+#containerDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#containerDiv > div {
+    width: 250px;
+    margin: 20px 10px 0 10px;
+}
 .start {
     height: 50px;
     font-size: 1.5rem;

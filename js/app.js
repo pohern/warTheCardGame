@@ -21,7 +21,7 @@ const userPlay = document.querySelector('.userPlay');
 const responseEl = document.querySelector('.response');
 const totalRounds = document.getElementById('totalCount');
 const input1 = document.getElementById('adding');
-const jokes = document.getElementById('jokes');
+const jokes = document.getElementById('jokesButton');
 const container = document.getElementById('containerDiv');
 message.style.color = 'red';
 /*----------------------------- Event Listeners -----------------------------*/
@@ -32,6 +32,10 @@ buttons.forEach(function(item){
 flipBtn.addEventListener('click', addition);
 
 jokes.addEventListener('click', () => {
+    // console.log('banana')
+    // fetch('https://geek-jokes.sameerkumar.website/api')
+    // .then(response => response.json())
+    // .then(data => console.log(data));
     fetch('https://geek-jokes.sameerkumar.website/api')
     .then((response) => {
         console.log(response)
@@ -41,7 +45,7 @@ jokes.addEventListener('click', () => {
     .then((data)=> {
         let newQuote = {}
         newQuote['artist'] = 'T-Swift'
-        newQuote['quote'] = data.quote
+        newQuote['quote'] = data
         quotes.push(newQuote)
         render()
     })

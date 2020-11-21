@@ -16,6 +16,7 @@ const buttons = document.querySelectorAll('button');
 const gamePlay = document.querySelector('.gamePlay');
 const userPlay = document.querySelector('.userPlay');
 const responseEl = document.querySelector('.response');
+const total = document.getElementById('totalCount')
 message.style.color = 'red';
 /*----------------------------- Event Listeners -----------------------------*/
 buttons.forEach(function(item){

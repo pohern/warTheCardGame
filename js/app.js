@@ -13,17 +13,26 @@ let total = 0;
 /*------------------------ Cached Element References ------------------------*/
 const message = document.querySelector('.message');
 const buttons = document.querySelectorAll('button');
+const flipBtn = document.getElementById('flip')
 const gamePlay = document.querySelector('.gamePlay');
 const userPlay = document.querySelector('.userPlay');
 const responseEl = document.querySelector('.response');
-// const total = document.getElementById('totalCount');
+const totalRounds = document.getElementById('totalCount');
+const input1 = document.getElementById('adding')
 message.style.color = 'red';
 /*----------------------------- Event Listeners -----------------------------*/
 buttons.forEach(function(item){
     item.addEventListener('click',playGame);
 });
+flipBtn.addEventListener('click', addition);
 /*-------------------------------- Functions --------------------------------*/
-function playGame(e, winner){
+function addition(){
+    let input2 = totalRounds.value
+    result = parseInt(input1.value) + parseInt(input2)
+    totalRounds.value = result
+}
+
+function playGame(e){
     let temp = e.target.textContent;
     // console.log(temp);
     if (temp === 'Start'){

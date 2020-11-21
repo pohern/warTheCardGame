@@ -22,7 +22,7 @@ buttons.forEach(function(item){
     item.addEventListener('click',playGame);
 });
 /*-------------------------------- Functions --------------------------------*/
-function playGame(e){
+function playGame(e, winner){
     let temp = e.target.textContent;
     // console.log(temp);
     if (temp === 'Start'){
@@ -281,12 +281,12 @@ function dealRound(playerList, tempHolder){
             tempHolder.push(card);
             showCard(players[tempPlayerIdx], card);
     }}
+
     if (war.length > 0) {
         dealRound(war, tempHolder);
     } else {
         updater(currentWinner.player, tempHolder);
     }
-    // players[winner].classList.remove('animate__animated', 'animate__tada');
 };
 
 function makeCards(){
@@ -311,7 +311,7 @@ function winGame(){
     for(let x = 0; x < players.length; x++){
         players[x].innerHTML += (deals[x].length >= total) ? `<br>WINNER` : `<br>LOSER`;
     }
-    confetti.start();
+    confetti.start(3000);
     message.innerHTML = 'Select number of players';
     document.querySelector('input').value = '2';
 
@@ -321,7 +321,11 @@ function winGame(){
 function updater(winner, tempHolder){
     // player[winner].classList.remove('animate__animated', 'animate__tada');
     players[winner].style.backgroundColor = 'green'
+    players.forEach(player => 
+        player.setAttribute('class','')
+    );
     players[winner].setAttribute('class','animate__animated animate__tada');
+    
     
    //Randomizes Cards before being put into winners hand
     tempHolder.sort(function(){
@@ -344,7 +348,9 @@ function updater(winner, tempHolder){
         
     }
     responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards<br>`;
-    // players[winner].removeAttribute('class','animate__animated animate__tada')
+    // setTimeout(function(){
+    //     players[winner].removeAttribute('class','animate__animated animate__tada')
+    // },1);
 };
 
 function dealCards(playerCard){

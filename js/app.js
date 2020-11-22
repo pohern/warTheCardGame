@@ -36,7 +36,7 @@ jokes.addEventListener('click', () => {
     // fetch('https://geek-jokes.sameerkumar.website/api')
     // .then(response => response.json())
     // .then(data => console.log(data));
-    fetch('https://geek-jokes.sameerkumar.website/api')
+    fetch('https://official-joke-api.appspot.com/jokes/programming/random')
     .then((response) => {
         console.log(response)
         return response.json()
@@ -44,8 +44,8 @@ jokes.addEventListener('click', () => {
     })
     .then((data)=> {
         let newQuote = {}
-        newQuote['artist'] = ''
-        newQuote['quote'] = data
+        newQuote['artist'] = data[0].setup
+        newQuote['quote'] = data[0].punchline
         quotes.push(newQuote)
         render()
     })
@@ -57,11 +57,11 @@ jokes.addEventListener('click', () => {
 function appendDiv (quote, artist, idx){
     let newDiv = document.createElement('div')
     newDiv.innerHTML = `
-                        <div class="jokeCard h-75" id="${artist.toLowerCase()}">
+                        <div class="jokeCard h-100" id="${quote.toLowerCase()}">
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
-                                    <p>${quote}</p>
-                                    <footer class="blockquote-footer">${artist}</footer>
+                                    <p>${artist}</p>
+                                    <footer class="blockquote-footer">${quote}</footer>
                                 </blockquote>
                             </div>
                             <button id = 'delButton' class='btn1' onClick={deleteQuote(${idx})}>X</button>

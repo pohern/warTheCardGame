@@ -186,6 +186,7 @@ h1 {
 }
 .gameplay {
     background-color: white;
+    display: flex;
 }
 .message {
     font-size: 30px;

@@ -21,7 +21,7 @@ const totalRounds = document.getElementById('totalCount');
 const input1 = document.getElementById('adding');
 const jokes = document.getElementById('jokesButton');
 const container = document.getElementById('containerDiv');
-message.style.color = 'red';
+message.style.color = 'white';
 /*----------------------------- Event Listeners -----------------------------*/
 buttons.forEach(function(item){
     item.addEventListener('click',playGame);
@@ -123,7 +123,7 @@ function startGame(){
 
 function showCard(element,card) {
     if(card != undefined){
-        element.style.backgroundColor = 'cornflowerblue';
+        element.style.backgroundColor = 'rgb(24, 98, 236)';
         let div = document.createElement('div');
         div.classList.add('card');
         if (card.suit ==='diams'){

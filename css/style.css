@@ -102,25 +102,26 @@ input {
     justify-items: center;
     width: 100px;
     height: 50px;
-    background-color: cornflowerblue;
+    background-color:  rgb(24, 98, 236);
     border: none;
     color: black;
     font-size: 2rem;
 }
 h3 {
-    color: red;
+    color: whitesmoke;
     font-family: 'Pacifico', cursive;
 }
 .message {
     font-family: 'Amatic SC', cursive;
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 3rem;
 }
 body {
     height: 100vh;
     text-align: center;
     justify-content: center;
     justify-items: center;
-    background-color: cornflowerblue;
+    background-color: rgb(24, 98, 236);
 }
 .player {
     display: inline-block;

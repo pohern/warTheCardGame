@@ -1,6 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
 const ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
-// const ranks = [2,3];
 const suits = ['hearts','spades','diams','clubs'];
 const quotes = [];
 /*---------------------------- Variables (state) ----------------------------*/
@@ -14,7 +13,7 @@ let laughing = new Audio('/audio/laughing.mp3');
 /*------------------------ Cached Element References ------------------------*/
 const message = document.querySelector('.message');
 const buttons = document.querySelectorAll('button');
-const flipBtn = document.getElementById('flip')
+const flipBtn = document.getElementById('flip');
 const gamePlay = document.querySelector('.gamePlay');
 const userPlay = document.querySelector('.userPlay');
 const responseEl = document.querySelector('.response');
@@ -47,10 +46,10 @@ jokes.addEventListener('click', () => {
     .catch((err) => {
         console.log(err)
     })
-})
+});
 jokes.addEventListener('click',function(){
     laughing.play()
-})
+});
 /*-------------------------------- Functions --------------------------------*/
 function appendDiv (quote, artist, idx){
     let newDiv = document.createElement('div')

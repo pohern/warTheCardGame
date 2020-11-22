@@ -61,6 +61,21 @@
     height: 50px;
 }
 
+.blockquote > p {
+    font-size: 1rem;
+}
+.blockquote-footer {
+    color: lime;
+    font-size: 1rem;
+    text-align: center;
+}
+.btn1 {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 2px;
+    height: 30px;
+    width: 30px;
+}
 button {
     font-size: 1.2rem;
     text-align: center;
@@ -86,14 +101,17 @@ input {
     justify-items: center;
     width: 100px;
     height: 50px;
-    background-color: gold;
+    background-color: cornflowerblue;
+    border: none;
     color: black;
     font-size: 2rem;
 }
 h3 {
     color: red;
+    font-family: 'Pacifico', cursive;
 }
 .message {
+    font-family: 'Amatic SC', cursive;
     font-size: 30px;
 }
 body {
@@ -118,6 +136,7 @@ h1 {
     font-size: 4rem;
     font-weight: bold;
     color: gold;
+    font-family: 'Pacifico', cursive;
 }
 .card {
     box-sizing: border-box;
@@ -171,6 +190,7 @@ h1 {
 
 }
 div.response {
+    font-family: 'Amatic SC', cursive;
     font-size: 30px;
 }
 .card.diamonds.A,

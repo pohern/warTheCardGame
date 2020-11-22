@@ -57,14 +57,14 @@ jokes.addEventListener('click', () => {
 function appendDiv (quote, artist, idx){
     let newDiv = document.createElement('div')
     newDiv.innerHTML = `
-                        <div class="jokeCard h-100" id="${artist.toLowerCase()}">
+                        <div class="jokeCard h-75" id="${artist.toLowerCase()}">
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
                                     <p>${quote}</p>
                                     <footer class="blockquote-footer">${artist}</footer>
                                 </blockquote>
                             </div>
-                            <button id = 'delButton' class='btn' onClick={deleteQuote(${idx})}>X</button>
+                            <button id = 'delButton' class='btn1' onClick={deleteQuote(${idx})}>X</button>
                         </div>    
                         `
     container.appendChild(newDiv)

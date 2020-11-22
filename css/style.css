@@ -19,8 +19,24 @@
 }
 
 .jokeCard {
+    justify-content: center;
+    align-items: center;
     color: blanchedalmond;
     text-align: center;
+    background-image: linear-gradient(
+        to right top,
+        #0069ff,
+        #0075fe,
+        #007ffc,
+        #0089f9,
+        #0092f4,
+        #009bf1,
+        #00a3eb,
+        #00aae5,
+        #00b3dc,
+        #00b9c9,
+        #00bdad,
+        #00bf8c)
 }
 .start {
     height: 50px;

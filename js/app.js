@@ -11,8 +11,6 @@ let round = 0;
 let inPlay = false;
 let total = 0;
 let laughing = new Audio('/audio/laughing.mp3');
-
-
 /*------------------------ Cached Element References ------------------------*/
 const message = document.querySelector('.message');
 const buttons = document.querySelectorAll('button');
@@ -86,7 +84,7 @@ function addition(){
     let input2 = totalRounds.value
     result = parseInt(input1.value) + parseInt(input2)
     totalRounds.value = result
-}
+};
 
 function playGame(e){
     let temp = e.target.textContent;

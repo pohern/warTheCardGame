@@ -10,6 +10,7 @@ let deals = [];
 let round = 0;
 let inPlay = false;
 let total = 0;
+let laughing = new Audio('/audio/laughing.mp3');
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -52,6 +53,9 @@ jokes.addEventListener('click', () => {
     .catch((err) => {
         console.log(err)
     })
+})
+jokes.addEventListener('click',function(){
+    laughing.play()
 })
 /*-------------------------------- Functions --------------------------------*/
 function appendDiv (quote, artist, idx){

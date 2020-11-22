@@ -33,10 +33,6 @@ buttons.forEach(function(item){
 flipBtn.addEventListener('click', addition);
 
 jokes.addEventListener('click', () => {
-    // console.log('banana')
-    // fetch('https://geek-jokes.sameerkumar.website/api')
-    // .then(response => response.json())
-    // .then(data => console.log(data));
     fetch('https://official-joke-api.appspot.com/jokes/programming/random')
     .then((response) => {
         console.log(response)
@@ -94,7 +90,6 @@ function addition(){
 
 function playGame(e){
     let temp = e.target.textContent;
-    // console.log(temp);
     if (temp === 'Start'){
         message.style.color = 'black';
         btnToggle();
@@ -130,11 +125,8 @@ function startGame(){
 };
 
 function showCard(element,card) {
-    // console.log(card);
     if(card != undefined){
         element.style.backgroundColor = 'cornflowerblue';
-        // let html1 = card.rank + '<br>&' + card.suit + ';';
-        // let html2 = card.rank + '&' + card.suit + ';';
         let div = document.createElement('div');
         div.classList.add('card');
         if (card.suit ==='diams'){
@@ -315,13 +307,11 @@ function dealRound(playerList, tempHolder){
         'player': playerList[0]
     }
     let war = [];
-    // console.log(playerList)
     for(let x = 0; x < playerList.length; x++){
         let tempPlayerIdx = playerList[x];
         if(deals[tempPlayerIdx].length > 0){
             let card = deals[tempPlayerIdx].shift();
             if(currentWinner.high == card.value){
-            // console.log('tie');
                 if (war.length == 0){
                     war.push(currentWinner.player);
                 }
@@ -336,7 +326,6 @@ function dealRound(playerList, tempHolder){
             tempHolder.push(card);
             showCard(players[tempPlayerIdx], card);
     }}
-
     if (war.length > 0) {
         dealRound(war, tempHolder);
     } else {
@@ -372,19 +361,13 @@ function winGame(){
 
 };
 
-//Giving the winner the cards won that round
 function updater(winner, tempHolder){
-    // player[winner].classList.remove('animate__animated', 'animate__tada');
     players[winner].style.backgroundColor = 'green'
     players.forEach(player => 
         player.setAttribute('class','')
     );
     players[winner].setAttribute('class','animate__animated animate__tada');
-    
-    
-   //Randomizes Cards before being put into winners hand
     tempHolder.sort(function(){
-        //sort an array object in place
         return .5 - Math.random();
     })
     for(let record of tempHolder){
@@ -403,21 +386,16 @@ function updater(winner, tempHolder){
         
     }
     responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards<br>`;
-    // setTimeout(function(){
-    //     players[winner].removeAttribute('class','animate__animated animate__tada')
-    // },1);
 };
 
 function dealCards(playerCard){
     playerCard = (playerCard >= players.length) ? 0 : playerCard;
-    // console.log(playerCard);
     if(deck.length > 0){
         let randIndex = Math.floor(Math.random() * deck.length);
         let card = deck.splice(randIndex, 1)[0];
         deals[playerCard].push(card);
         playerCard++;
         return dealCards(playerCard);
-        // console.log(deals);
     } else {
         message.textContent = `Cards have all been dealt!`;
         return;
@@ -453,8 +431,6 @@ function setupPlayers(num){
         div.appendChild(players[x]);
         gamePlay.appendChild(div);
         deals.push([]);
-        // console.log(deals);
-        // console.log(div);
     }
 };
 

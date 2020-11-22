@@ -430,4 +430,3 @@ function setupPlayers(num){
         deals.push([]);
     }
 };
-

@@ -131,7 +131,7 @@ body {
     justify-items: center;
     justify-content: center;
     width: 200px;
-    min-height: 200px;
+    min-height: 100px;
     vertical-align: center;
     text-align: center;
     font-size: 2rem;
@@ -186,7 +186,7 @@ h1 {
 }
 .gameplay {
     background-color: white;
-    display: flex;
+    display: block;
 }
 .message {
     font-size: 30px;

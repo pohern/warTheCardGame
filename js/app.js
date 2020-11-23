@@ -351,7 +351,6 @@ function winGame(){
         players[x].innerHTML += (deals[x].length >= total) ? `<br>WINNER` : `<br>LOSER`;
     }
     confetti.start(3000);
-    div.response = ''
     message.innerHTML = 'Select number of players';
     document.querySelector('input').value = '2';
     totalRounds.value = '-1';

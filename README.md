@@ -27,3 +27,8 @@
 9. If one player has all the cards, they win
 10. Handle a player clicking the replay button
   *  Handled though end of game to restart
+
+### Screenshots of Gameplay
+![wireframe](css/firstScreen.png)
+![wireframe](css/2playerEx.png)
+![wireframe](css/multiplayerEx.png)

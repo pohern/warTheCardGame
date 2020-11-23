@@ -378,8 +378,7 @@ function updater(winner, tempHolder){
         } else {
             div.innerHTML = deals[x].length < 1 ? 'Lost' : `Cards: ${(deals[x].length)}`;
         }
-        players[x].appendChild(div);
-        
+        players[x].appendChild(div);   
     }
     responseEl.innerHTML += `Player ${(winner + 1)} won ${tempHolder.length} cards<br>`;
 };

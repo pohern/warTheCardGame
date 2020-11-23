@@ -24,6 +24,7 @@
 * Whimsical (for wire frames)
 * Postman
 * Random Joke API
+* Google Fonts
 
 ### Future Improvements
 1. Add more decks of cards if there are more players.

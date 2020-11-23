@@ -10,3 +10,5 @@ War uses mp3 found [here](http://soundbible.com/1257-Jolly-Laugh.html). It is li
 ## Additionally...
 
 War uses confetti-js by mathusummut to generate celebratory confetti. Found at: [JsDelivr](https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js).
+
+CSS animations come from 'animate.css', a animation library created by Daniel Eden [here] (https://daneden.github.io/animate.css/).

@@ -80,6 +80,7 @@
     height: 30px;
     width: 30px;
 }
+
 button {
     font-size: 1.2rem;
     text-align: center;
@@ -98,6 +99,9 @@ input {
     background-color: gold;
     color: black;
     font-size: 2rem;
+}
+#adding {
+    width: 80px;
 }
 #totalCount {
     text-align: center;

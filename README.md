@@ -16,6 +16,15 @@
 ![actualGameplay](css/2playerEx.png)
 ![actualGameplay](css/multiplayerEx.png)
 
+### Technologies Used 
+* CSS
+* JavaScript 
+* HTML
+* Bootstrap
+* Whimsical (for wire frames)
+* Postman
+* Random Joke API
+
 ### Future Improvements
 1. Add more decks of cards if there are more players.
 2. Add an empty deck of cards for each player to flip from.

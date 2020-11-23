@@ -29,3 +29,4 @@
 1. Add more decks of cards if there are more players.
 2. Add an empty deck of cards for each player to flip from.
 3. Add more animations.
+4. Make buttons better looking.

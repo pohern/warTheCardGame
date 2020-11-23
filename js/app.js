@@ -32,9 +32,7 @@ flipBtn.addEventListener('click', addition);
 jokes.addEventListener('click', () => {
     fetch('https://official-joke-api.appspot.com/jokes/programming/random')
     .then((response) => {
-        console.log(response)
-        return response.json()
-    
+        return response.json();
     })
     .then((data)=> {
         let newQuote = {}

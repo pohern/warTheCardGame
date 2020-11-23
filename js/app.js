@@ -353,7 +353,7 @@ function winGame(){
     confetti.start(3000);
     message.innerHTML = 'Select number of players';
     document.querySelector('input').value = '2';
-    totalRounds.value = '1';
+    totalRounds.value = '-1';
 };
 
 function updater(winner, tempHolder){
